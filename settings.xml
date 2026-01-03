@@ -1,0 +1,33 @@
+<settings> 
+
+<servers>
+  <server>
+    <id>nextwork-nextwork-devops-cicd-rab-codeArt</id>
+    <username>aws</username>
+    <password>${env.CODEARTIFACT_AUTH_TOKEN}</password>
+  </server>
+</servers>
+<profiles>
+  <profile>
+    <id>nextwork-nextwork-devops-cicd-rab-codeArt</id>
+    <activation>
+      <activeByDefault>true</activeByDefault>
+    </activation>
+    <repositories>
+      <repository>
+        <id>nextwork-nextwork-devops-cicd-rab-codeArt</id>
+        <url>https://nextwork-176971016201.d.codeartifact.us-east-1.amazonaws.com/maven/nextwork-devops-cicd-rab-codeArt/</url>
+      </repository>
+    </repositories>
+  </profile>
+</profiles>
+<mirrors>
+  <mirror>
+    <id>nextwork-nextwork-devops-cicd-rab-codeArt</id>
+    <name>nextwork-nextwork-devops-cicd-rab-codeArt</name>
+    <url>https://nextwork-176971016201.d.codeartifact.us-east-1.amazonaws.com/maven/nextwork-devops-cicd-rab-codeArt/</url>
+    <mirrorOf>*</mirrorOf>
+  </mirror>
+</mirrors>
+
+</settings>
