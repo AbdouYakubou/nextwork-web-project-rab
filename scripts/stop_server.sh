@@ -1,11 +1,12 @@
 #!/bin/bash
 set -e
+
+# Stop Tomcat safely
 systemctl stop tomcat || true
-isExistApp="$(pgrep httpd)"
-if [[ -n $isExistApp ]]; then
-sudo systemctl stop httpd.service
+
+# Stop Apache safely (only if it exists)
+if systemctl list-unit-files | grep -q '^httpd\.service'; then
+  systemctl stop httpd || true
 fi
-isExistApp="$(pgrep tomcat)"
-if [[ -n $isExistApp ]]; then
-sudo systemctl stop tomcat.service
-fi
+
+exit 0
