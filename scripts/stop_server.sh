@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+systemctl stop tomcat || true
 isExistApp="$(pgrep httpd)"
 if [[ -n $isExistApp ]]; then
 sudo systemctl stop httpd.service
